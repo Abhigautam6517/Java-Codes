@@ -1,20 +1,25 @@
 public class Armstrong {
-    public static void main(String[] args) {
-        
-    int num = 153;
-    int copy = num;
-    int sum = 0;
-    while(num!=0){
+    static int check(int num,int sum){
+        if(num==0){
+            return sum;
+
+        }
+       
         int digit = num%10;
-        sum = sum + (digit*digit*digit);
-       num = num/10;
+        int cube =  (digit*digit*digit);
+        sum = sum+cube;
+        int rem = num/10;
+        return check(rem,sum);
+
+
+
+
     }
-    if(copy==sum){
-        System.out.println("This number is Armstrong number");
+    public static void main(String[] args) {
+        int num = 153;
+        int armstrong = check(num,0);
+        System.out.println(num==armstrong?"armstrong":"not");
     }
-    else{
-        System.out.println("this number is not Armstrong number");
-    }
-    }
+
     
 }

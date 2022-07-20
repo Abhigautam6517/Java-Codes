@@ -1,18 +1,21 @@
+
+
 public class PrimeNumber {
-    public static void main(String[] args) {
-        int num = 100;
-        for(int i = 2;i<=num;i++){
-            if(num%i==0){
-                System.out.println("yes this number is prime");
-                break;
-            }
-            else{
-                System.out.println("this number is not prime");
-                break;
-            }
-
+    static boolean prime(int num, int div,int stop){
+        if(div==stop){
+            return true;
         }
-
+        if(num%div==0){
+            return false;
+        }
+        return prime(num, div+1, stop);
+    }
+    public static void main(String[] args) {
+        int num = 3;
+        int div = 2;
+        int stop = num-1;
+        boolean result = prime(num,div,stop);
+        System.out.println(result?"Yes Its Prime Number":"No it not prime number");
     }
     
 }
