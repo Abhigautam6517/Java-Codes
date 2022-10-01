@@ -1,20 +1,21 @@
-class PeakElement{
-    public static int Peak(int arr[],int n){
-        int key = 0;
-        for(int i = 0;i<n-1;i++){
-            if(arr[i]<arr[i+1]){
-                key = i+1;
-            }
-            
-        }
-        return key;
-        
+package Day7;
 
+public class PeakElement {
+    public int findPeakElement(int[] nums) {
+        int key =nums[0];
+        int max = 0;
+        int n = nums.length;
+        for(int i =0;i<n;i++){
+            if(key<nums[i]){
+                key=nums[i];
+                max=i;
+
+            }
+           
+
+        }
+         return max;
+        
     }
-    public static void main(String[] args) {
-        int arr[] = {4,1,10,2,6,12};
-        int n = arr.length;
-        int element = Peak(arr,n);
-        System.out.print("Peak Element of index is"+" "+element);
-    }
+    
 }
