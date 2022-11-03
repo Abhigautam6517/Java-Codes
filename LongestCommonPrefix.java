@@ -1,18 +1,13 @@
 public class LongestCommonPrefix {
-    String longestCommonPrefix(String arr[], int n){
-        String ans = "";
-        for(int i = 0;i<arr[0].length();i++){
-            char t = arr[0][i];
-            for(int j = 1;j<n;j++){
-                if(t!=arr[j][i]){
-                    return ans;
+        public String longestCommonPrefix(String[] strs) {
+            String prefix = strs[0];
+            for(int index=1;index<strs.length;index++){
+                while(strs[index].indexOf(prefix) != 0){
+                    prefix=prefix.substring(0,prefix.length()-1);
                 }
-                ans = ans+t;
             }
+            return prefix;
         }
-        return ans;
-       
-      
     }
     
-}
+    
